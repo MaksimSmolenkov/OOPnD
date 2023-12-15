@@ -27,7 +27,7 @@ jobs:
       - name: Test
         run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
       
-      - name: Codecov
+      - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
-        with: 
-          token: 82e946ce-cc82-4d39-8c53-19cd842ee593
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
