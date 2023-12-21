@@ -1,8 +1,9 @@
-namespace SpaceBattle.Lib;
 using _ICommand;
+
+namespace SpaceBattle;
 
 public interface IQueue
 {
-    public void Push(ICommand cmd);
-    public ICommand Take();
+    void Add(Hwdtech.ICommand cmd);  //добавляет объект в конец очереди
+    ICommand Take();                 //извлекает объект из очереди
 }
